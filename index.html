@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Import Google Icon Font-->
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<!-- Include css file in html -->
+		<link rel="stylesheet" href="css/style.css">
+
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="utf-8">
+		<meta name="description" content="Generate your random latin letter, easy and simple">
+		<meta name="keywords" content="Alphabet, letters, randomize, latin letter, random letters">
+		<meta name="author" content="Zane Hartmane">
+		<title>Alphabet App</title>
+    </head>
+
+    <body class="is-loading">
+        <div id="preloader">
+            <div class="txt">
+                <p class="txt-perc">Loading letters</p>
+                <div class="progress"><span id="kri"></span></div>
+            </div>
+        </div>
+
+		<div class="container">
+  			<div class="row">
+      			<div class="col s4 offset-s4">
+      				<h1 id="body_title">A</h1>
+      			</div>
+			</div>
+
+            <div class="row">
+                <div class="col s4 offset-s4 center_element">
+                    <button id="rotation_arrow" type="submit">
+                        <i class="large material-icons loop_arrow">loop</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+  		<!--Import jQuery before materialize.js-->
+  		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  		<script type="text/javascript" src="js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+  		<script type="text/javascript" src="js/alphabet.js"></script>
+
+    </body>
+</html>
