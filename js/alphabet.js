@@ -3,12 +3,19 @@ $(function() {
 
 	var letter_list = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
 	
-	$("#rotation_arrow").click(function() {
-	    $(this).find('i').toggleClass('on');
-		var random_letter = generate_letter(letter_list);
+	$("#rotation_arrow").mouseenter(function() {
+        $(this).css("background", "#F00")
+               .css("border-radius", "3px");
+    }).mouseleave(function() {
+        $(this).css("background", "00F")
+               .css("border-radius", "10px");
+    }).click(function() {
+        $(this).css("background", "00F")
+        .css("border-radius", "50px");
 
-		insert_letter(random_letter);
-	});
+        var random_letter = generate_letter(letter_list);
+        insert_letter(random_letter);
+    });
 
 	function insert_letter(random_letter) {
 		var text = $('h1#body_title').text();
