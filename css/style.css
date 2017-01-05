@@ -34,12 +34,13 @@ button#rotation_arrow {
 }
 
 .loop_arrow {
-    -webkit-transition: 0.7s ease-in;
-    -moz-transition:  0.7s ease-in;
-    transition:  0.7s ease-in;
+    -webkit-transition: 200ms linear all;
+    -moz-transition: 200ms linear all;
+    -o-transition: 200ms linear all;
+    transition: 200ms linear all;
 }
 
-.loop_arrow:hover {
+.loop_arrow.on {
     -webkit-transform: rotate(-180deg);
     -moz-transform: rotate(-180deg);
     -ms-transform: rotate(-180deg);

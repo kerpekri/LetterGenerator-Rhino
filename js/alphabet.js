@@ -4,6 +4,7 @@ $(function() {
 	var letter_list = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
 	
 	$("#rotation_arrow").click(function() {
+	    $(this).find('i').toggleClass('on');
 		var random_letter = generate_letter(letter_list);
 
 		insert_letter(random_letter);
