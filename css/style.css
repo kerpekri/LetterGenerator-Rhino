@@ -98,15 +98,15 @@ div.progressVal {
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
   #preloader .txt-perc {
-    font-size: 35px;
-    font-family: 'Roboto Condensed', Helvetica, Helvetica Neue, Arial, sans-serif;
+    font-size: 20px;
+    font-family: 'ReemKufi-Regular';
     opacity: 1;
     margin: 0 0 6px 0;
     max-width: 400px;
     text-align: center; }
   #preloader .progress {
     width: 100px;
-    height: 3px;
+    height: 10px;
     background-color: rgba(255, 255, 255, 0.2);
     margin: 0 auto 15px auto; }
     #preloader .progress span {

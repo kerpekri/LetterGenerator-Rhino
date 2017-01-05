@@ -23,7 +23,7 @@ $(function() {
     function loadLoadingBar() {
         var widthOfLoadingBar = 0;
         var incrementWidthValueBy = 2;
-        var incrementSpeedValue = 65;
+        var incrementSpeedValue = 50;
 
         var progressBar = setInterval(function () {
             if (widthOfLoadingBar == 100) {
