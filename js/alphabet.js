@@ -1,5 +1,9 @@
 $(function() {
-    loadLoadingBar();
+    if (!!$.cookie('token')) {
+     //no cookie
+    } else {
+     // have cookie
+    }
 
 	var letter_list = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
 	
@@ -17,6 +21,14 @@ $(function() {
         insert_letter(random_letter);
     });
 
+    function setCookie () {
+        Cookies.set('alphabetApp', { visitedUs: true, expires: 1, path: '' });
+    };
+
+    function getCookie () {
+        Cookies.get('alphabetApp');
+    };
+
 	function insert_letter(random_letter) {
 		var text = $('h1#body_title').text();
 		$("h1#body_title").replaceWith('<h1 id=body_title>' + random_letter + '</h1>');
@@ -30,7 +42,7 @@ $(function() {
     function loadLoadingBar() {
         var widthOfLoadingBar = 0;
         var incrementWidthValueBy = 2;
-        var incrementSpeedValue = 50;
+        var incrementSpeedValue = 10;
 
         var progressBar = setInterval(function () {
             if (widthOfLoadingBar == 100) {

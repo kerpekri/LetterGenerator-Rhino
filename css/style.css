@@ -80,40 +80,6 @@ button#rotation_arrow {
     transform: rotate(-180deg);
 }*/
 
-div.progress {
-  margin: 20px 20px 20px 0;
-  padding: 0;
-  width: 540px;
-  height: 20px;
-  background-color: #eef;
-  border: 1px solid #444;
-  position:relative;
-}
-
-div.progressIndicator {
-  margin: 0;
-  padding: 0;
-  background-color: #fbcb46;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index:1;
-  width: 10%;
-  height: 100%;
-}
-
-div.progressVal {
-  position: absolute;
-  top: 0;
-  left:10px;
-  z-index:2;
-  margin: 0;
-  padding: 0;
-  height: 20px;
-  text-align: center;
-  font-weight: bold;
-}
-
 /* =Preloader */
 #preloader {
   position: absolute;
@@ -128,7 +94,8 @@ div.progressVal {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
+            transform: translate(-50%, -50%);
+            }
   #preloader .txt-perc {
     font-size: 20px;
     font-family: 'ReemKufi-Regular';
