@@ -1,32 +1,23 @@
 $(function() {
-    if (!!$.cookie('token')) {
-     //no cookie
-    } else {
-     // have cookie
-    }
+    setCookie();
+    getCookie();
+
+    loadLoadingBar();
 
 	var letter_list = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
 	
-	$("#rotation_arrow").mouseenter(function() {
-        $(this).css("background", "#F00")
-               .css("border-radius", "3px");
-    }).mouseleave(function() {
-        $(this).css("background", "00F")
-               .css("border-radius", "10px");
-    }).click(function() {
-        $(this).css("background", "00F")
-        .css("border-radius", "50px");
-
+	$("#rotation_arrow").click(function() {
         var random_letter = generate_letter(letter_list);
         insert_letter(random_letter);
     });
 
     function setCookie () {
-        Cookies.set('alphabetApp', { visitedUs: true, expires: 1, path: '' });
+        Cookies.set('kri', 'testing');
     };
 
     function getCookie () {
-        Cookies.get('alphabetApp');
+        var x = Cookies.get('kri');
+        console.log(x);
     };
 
 	function insert_letter(random_letter) {
