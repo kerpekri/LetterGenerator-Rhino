@@ -7,6 +7,7 @@ $(function() {
         setCookie();
     }
     else {
+        
     }
 
 	$("#rotation_arrow").click(function() {
