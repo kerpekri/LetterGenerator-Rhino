@@ -1,6 +1,8 @@
 body { 
 	color: #F3FFF8;
-	background-color: #3ECAFF; 
+	background-color: #3ECAFF;
+	overflow-x:hidden;
+	overflow-y:hidden;
 }
 @font-face {
     font-family: ReemKufi-Regular;
@@ -100,6 +102,7 @@ button#rotation_arrow {
   #preloader.is-hidden {
     visibility: hidden;
     opacity: 0;
+    display: none;
     }
 
 .is-loading {
@@ -115,4 +118,8 @@ button#rotation_arrow {
     color: #fff;
     font-size: 1.6rem;
     line-height: 40px;
+}
+
+.hidden {
+    display: none;
 }

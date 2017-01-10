@@ -1,23 +1,26 @@
 $(function() {
-    setCookie();
-    getCookie();
+    cookieExists = getCookie();
 
-    loadLoadingBar();
+    if (cookieExists == null || cookieExists == undefined) {
+        $("#preloader").removeClass("hidden");
+        loadLoadingBar();
+        setCookie();
+    }
+    else {
+    }
 
-	var letter_list = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
-	
 	$("#rotation_arrow").click(function() {
+	    var letter_list = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
         var random_letter = generate_letter(letter_list);
         insert_letter(random_letter);
     });
 
     function setCookie () {
-        Cookies.set('kri', 'testing');
+        Cookies.set('alphabetApp', 'visited', { expires: 0.1, path: '' });
     };
 
     function getCookie () {
-        var x = Cookies.get('kri');
-        console.log(x);
+        return Cookies.get('alphabetApp');
     };
 
 	function insert_letter(random_letter) {
@@ -33,7 +36,7 @@ $(function() {
     function loadLoadingBar() {
         var widthOfLoadingBar = 0;
         var incrementWidthValueBy = 2;
-        var incrementSpeedValue = 10;
+        var incrementSpeedValue = 5;
 
         var progressBar = setInterval(function () {
             if (widthOfLoadingBar == 100) {
