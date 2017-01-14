@@ -1,81 +1,81 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-K62W62P');</script>
-        <!-- End Google Tag Manager -->
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-K62W62P');</script>
+		<!-- End Google Tag Manager -->
 
 		<!--Import Google Icon Font-->
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
-		<link rel="stylesheet" href="../css/style.css">
-    
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+		<link rel="stylesheet" href="css/style.css">
+
 		<!--Let browser know website is optimized for mobile-->
-    <title>Random letter generator | Alphabet App</title>
+		<title>Random letter generator | Alphabet App</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta charset="utf-8">
 		<meta name="description" content="Random letter generator makes it easy for you to generate random latin alphabet letters starting from A to Z. It is free, fast and in friendly colours.">
 		<meta name="keywords" content="Alphabet, letters, randomize, latin letter, random letters, random alphabet">
 		<meta name="author" content="Zane Hartmane">
-      <meta property="og:title" content="Random letter generator" />
-      <meta property="og:description" content="Random letter generator makes it easy for you to generate random latin alphabet letters starting from A to Z. It is free, fast and in friendly colours." />
-      <meta property="og:url" content="www.alphabetapp.eu" />
-      <meta property="og:image" content="css/images/AlphabetApp-OpenGraph.jpg" />
-    </head>
+		<meta property="og:title" content="Random letter generator" />
+		<meta property="og:description" content="Random letter generator makes it easy for you to generate random latin alphabet letters starting from A to Z. It is free, fast and in friendly colours." />
+		<meta property="og:url" content="www.alphabetapp.eu" />
+		<meta property="og:image" content="css/images/AlphabetApp-OpenGraph.jpg" />
+	</head>
 
-    <body class="is-loading">
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K62W62P"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
+	<body class="is-loading">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K62W62P"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 
-        <div id="preloader" class="hidden">
-            <div class="txt">
-                <p class="txt-perc">Loading letters</p>
-                <div class="progress"><span id="progress_span"></span></div>
-            </div>
-        </div>
+		<div id="preloader" class="hidden">
+				<div class="txt">
+						<p class="txt-perc">Loading letters</p>
+						<div class="progress"><span id="progress_span"></span></div>
+				</div>
+		</div>
 
 		<div class="container">
-  			<div class="row">
-      			<div class="col s4 offset-s4">
-      				<h1 id="body_title">A</h1>
-      			</div>
+			<div class="row">
+				<div class="col s4 offset-s4">
+					<h1 id="body_title">A</h1>
+				</div>
 			</div>
 
-            <div class="row">
-                <div class="col s4 offset-s4 center_element">
-                    <button id="rotation_arrow" type="submit">
-                        <i class="large material-icons loop_arrow">loop</i>
-                    </button>
-                </div>
-            </div>
-        </div>
+			<div class="row">
+				<div class="col s4 offset-s4 center_element">
+					<button id="rotation_arrow" type="submit">
+						<i class="large material-icons loop_arrow">loop</i>
+					</button>
+				</div>
+			</div>
+		</div>
 
-        <div class="fixed-action-btn horizontal">
-            <a class="btn-floating btn-large blue">
-                <i class="large material-icons">info</i>
-            </a>
+		<div class="fixed-action-btn horizontal">
+			<a class="btn-floating btn-large blue">
+				<i class="large material-icons">info</i>
+			</a>
 
-            <ul>
-                <li>
-                  <a class="btn-floating blue" href="https://www.facebook.com/RhinoProjects-Blog-561840320678697/" target="_blank">
-                    <i class="material-icons">thumb_up</i>
-                  </a>
-                </li>
-            </ul>
-        </div>
+			<ul>
+				<li>
+					<a class="btn-floating blue" href="https://www.facebook.com/RhinoProjects-Blog-561840320678697/" target="_blank">
+						<i class="material-icons">thumb_up</i>
+					</a>
+				</li>
+			</ul>
+		</div>
 
-  		<!-- Script files -->
-  		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  		<script type="text/javascript" src="../js/materialize.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-        <script type="text/javascript" src="../js/js.cookie.js"></script>
-  		<script type="text/javascript" src="../js/alphabet.js"></script>
-    </body>
+		<!-- Script files -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+		<script type="text/javascript" src="js/js.cookie.js"></script>
+		<script type="text/javascript" src="js/alphabet.js"></script>
+	</body>
 </html>
