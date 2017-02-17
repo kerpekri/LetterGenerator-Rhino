@@ -10,6 +10,12 @@ $(function () {
 
     }
 
+    // Initialize collapse button
+    $(".button-collapse").sideNav();
+    $('.button-collapse').sideNav('show');
+    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+    //$('.collapsible').collapsible();
+
     $("#rotation_arrow").click(function () {
         var letter_list = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
         var random_letter = generate_letter(letter_list);
