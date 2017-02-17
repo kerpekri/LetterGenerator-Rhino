@@ -135,3 +135,6 @@ button#rotation_arrow {
 .hidden {
     display: none;
 }
+#fb-buttons {
+    padding-left: 20%;
+}
