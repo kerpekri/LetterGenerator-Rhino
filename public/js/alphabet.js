@@ -6,15 +6,22 @@ $(function () {
         loadLoadingBar();
         setCookie();
     }
-    else {
 
-    }
+    toggleHamburgerButton();
 
     $("#rotation_arrow").click(function () {
         var letter_list = "abcdefghijklmnoprstuvwxyz".toUpperCase();
         var random_letter = generate_letter(letter_list);
         insert_letter(random_letter);
     });
+
+    function toggleHamburgerButton() {
+        var $hamburger = $(".hamburger");
+        $hamburger.on("click", function (e) {
+            $hamburger.toggleClass("is-active");
+            $('.button-collapse').sideNav('show');
+        });
+    }
 
     function setCookie() {
         Cookies.set('alphabetApp', 'visited', {expires: 0.1, path: ''});
