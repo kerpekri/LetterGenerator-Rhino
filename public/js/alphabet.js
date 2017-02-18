@@ -10,17 +10,21 @@ $(function () {
 
     }
 
-    // Initialize collapse button
-    $(".button-collapse").sideNav();
-    $('.button-collapse').sideNav('show');
-    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-    //$('.collapsible').collapsible();
+    toggleHamburgerButton();
 
     $("#rotation_arrow").click(function () {
-        var letter_list = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
+        var letter_list = "mwai".toUpperCase();
         var random_letter = generate_letter(letter_list);
         insert_letter(random_letter);
     });
+
+    function toggleHamburgerButton() {
+        var $hamburger = $(".hamburger");
+        $hamburger.on("click", function (e) {
+            $hamburger.toggleClass("is-active");
+            $('.button-collapse').sideNav('show');
+        });
+    }
 
     function setCookie() {
         Cookies.set('alphabetApp', 'visited', {expires: 0.1, path: ''});
@@ -31,8 +35,8 @@ $(function () {
     }
 
     function insert_letter(random_letter) {
-        var bodyTitle = $('h1#body_title');
-        bodyTitle.replaceWith('<h1 id=body_title>' + random_letter + '</h1>');
+        var bodyTitle = $('h2#body_title');
+        bodyTitle.replaceWith('<h2 id=body_title>' + random_letter + '</h2>');
     }
 
     function generate_letter(letter_list) {
