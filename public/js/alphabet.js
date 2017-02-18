@@ -10,14 +10,8 @@ $(function () {
 
     }
 
-    // Initialize collapse button
-    $(".button-collapse").sideNav();
-    $('.button-collapse').sideNav('show');
-    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-    //$('.collapsible').collapsible();
-
     $("#rotation_arrow").click(function () {
-        var letter_list = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
+        var letter_list = "abcdefghijklmnoprstuvwxyz".toUpperCase();
         var random_letter = generate_letter(letter_list);
         insert_letter(random_letter);
     });
@@ -31,8 +25,8 @@ $(function () {
     }
 
     function insert_letter(random_letter) {
-        var bodyTitle = $('h1#body_title');
-        bodyTitle.replaceWith('<h1 id=body_title>' + random_letter + '</h1>');
+        var bodyTitle = $('h2#body_title');
+        bodyTitle.replaceWith('<h2 id=body_title>' + random_letter + '</h2>');
     }
 
     function generate_letter(letter_list) {
