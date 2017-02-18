@@ -18,7 +18,7 @@ $(function () {
     function toggleHamburgerButton() {
         var $hamburger = $(".hamburger");
         $hamburger.on("click", function (e) {
-            $hamburger.toggleClass("is-active");
+            //$hamburger.toggleClass("is-active");
             $('.button-collapse').sideNav('show');
         });
     }
