@@ -6,14 +6,11 @@ $(function () {
         loadLoadingBar();
         setCookie();
     }
-    else {
-
-    }
 
     toggleHamburgerButton();
 
     $("#rotation_arrow").click(function () {
-        var letter_list = "mwai".toUpperCase();
+        var letter_list = "abcdefghijklmnoprstuvwxyz".toUpperCase();
         var random_letter = generate_letter(letter_list);
         insert_letter(random_letter);
     });
