@@ -5,3 +5,5 @@ gem 'sinatra'
 
 # web server
 gem 'thin'
+
+gem 'sentry-raven'

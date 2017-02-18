@@ -3,9 +3,14 @@ GEM
   specs:
     daemons (1.2.4)
     eventmachine (1.2.2-x64-mingw32)
+    faraday (0.11.0)
+      multipart-post (>= 1.2, < 3)
+    multipart-post (2.0.0)
     rack (1.6.5)
     rack-protection (1.5.3)
       rack
+    sentry-raven (2.3.0)
+      faraday (>= 0.7.6, < 1.0)
     sinatra (1.4.8)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -20,6 +25,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  sentry-raven
   sinatra
   thin
 
