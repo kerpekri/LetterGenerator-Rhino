@@ -5,6 +5,8 @@ $(function () {
         $("#preloader").removeClass("hidden");
         loadLoadingBar();
         setCookie();
+    } else {
+        $("button#side-nav-hamburger-button").removeClass("hidden");
     }
 
     toggleHamburgerButton();
@@ -61,11 +63,14 @@ $(function () {
         // preloader out
         var preloaderOutTl = new TimelineMax();
         var preloaderElement = $('#preloader');
+        var sideNavElement = $('#side-nav-hamburger-button');
+        var pageBodyElement = $('body');
 
         preloaderOutTl
             .to($('.progress'), 0.3, {y: 100, autoAlpha: 0, ease: Back.easeIn})
             .to($('.txt-perc'), 0.3, {y: 100, autoAlpha: 0, ease: Back.easeIn}, 0.1)
-            .set($('body'), {className: '-=is-loading'})
+            .set(sideNavElement, {className: '-=hidden'})
+            .set(pageBodyElement, {className: '-=is-loading'})
             .to(preloaderElement, 0.7, {yPercent: 100, ease: Power4.easeInOut})
             .set(preloaderElement, {className: '+=is-hidden'});
 
