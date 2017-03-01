@@ -4,11 +4,11 @@
 }
 
 body {
-  color: #F3FFF8;
-  background-color: rgb(27, 188, 155);
-  overflow-x: hidden;
-  overflow-y: hidden;
-  font-family: ReemKufi-Regular;
+    color: #F3FFF8;
+    background-color: #6ee044;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: ReemKufi-Regular;
 }
 
 /* Side navigation */
@@ -43,11 +43,11 @@ h2#body_title {
 /* Side navigation */
 
 h2#body_title {
-  text-align: center;
-  font-size: 250px;
-  padding-top: 10%;
-  padding-right: 2%;
-  padding-left: 2%;
+    text-align: center;
+    font-size: 250px;
+    padding-top: 10%;
+    padding-right: 2%;
+    padding-left: 2%;
 }
 
 i#rotation_arrow {
@@ -57,8 +57,8 @@ i#rotation_arrow {
 }
 
 button#rotation_arrow {
-  border: 0;
-  background-color: #6ee044;
+    border: 0;
+    background-color: #6ee044;
 }
 
 .center_element {
