@@ -5,7 +5,7 @@
 
 body {
     color: #F3FFF8;
-    background-color: #3ECAFF;
+    background-color: #6ee044;
     overflow-x: hidden;
     overflow-y: hidden;
     font-family: ReemKufi-Regular;
@@ -63,7 +63,6 @@ h2#body_title {
     text-align: center;
     font-size: 250px;
     padding-top: 10%;
-    padding-bottom: 10%;
     padding-right: 2%;
     padding-left: 2%;
 }
@@ -76,7 +75,7 @@ i#rotation_arrow {
 
 button#rotation_arrow {
     border: 0;
-    background-color: #3ECAFF;
+    background-color: #6ee044;
 }
 
 .center_element {
