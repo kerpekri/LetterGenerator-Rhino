@@ -6,4 +6,8 @@ gem 'sinatra'
 # web server
 gem 'thin'
 
-gem 'sentry-raven'
+gem 'pry'
+
+gem 'haml'
+
+gem 'rerun'
