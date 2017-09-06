@@ -11,24 +11,24 @@ $(function () {
     }
   })
 
-  $("#generate_letter, #generate_number").click(function(){
-    var template_type = 'generate_letter'
+  $("#load_letter_section, #load_number_section").click(function(){
+    var section_type = 'load_letter_section'
 
-    if (this.id == 'generate_number') {
-      template_type = 'generate_number'
+    if (this.id == 'load_number_section') {
+      section_type = 'load_number_section'
     }
 
-    loadSecondSlideTemplate(template_type);
+    loadTemplate(section_type);
     enablePageScroll = true;
     $('#section1').removeClass('hide');
     $.fn.fullpage.moveTo(2);
   })
 
-  function loadSecondSlideTemplate(template_type) {
+  function loadTemplate(section_type) {
     $.ajax({
-      url: '/load_template',
+      url: '/choose_letters_or_numbers',
       data: {
-        'type': template_type
+        'type': section_type
       },
       type: "GET",
       dataType : "html",
@@ -41,19 +41,61 @@ $(function () {
     })
     .done(function(xhr, status) {
       var single = $('#single');
-      single.change(singleChangeHandler);
-      initAlphabetTypeSelect();
+      single.change(getValueFromSelectOnChange);
+      initializeMaterializeSelect();
     })
   }
 
-  function singleChangeHandler() {
-    //TODO
-    var singleValue = $("#single option:selected").val();
-    alert('xxx:' + singleValue);
+  function getValueFromSelectOnChange() {
+    var alphabetType = $("#single option:selected").val();
+    if (alphabetType) {
+      loadGenerateButton();
+    }
   }
 
-  function initAlphabetTypeSelect() {
+  function loadGenerateButton() {
+    $.ajax({
+      url: '/load_button',
+      data: {},
+      type: "GET",
+      dataType : "html",
+      success: function (html) {
+        $("#load_button").html("").append(html);
+      }
+    })
+    .fail(function(xhr, status, errorThrown) {
+      alert("Sorry, there was a problem!");
+    })
+    .done(function(xhr, status) {
+    })
+  }
+
+  function initializeMaterializeSelect() {
     $('select').material_select();
+  }
+  // TODO
+  $("#generate_loading, #load_button").click(function(){
+    alert('xxx');
+    //loadThirdSection();
+    //$('#section2').removeClass('hide');
+    //$.fn.fullpage.moveTo(3);
+  })
+
+  function loadThirdSection() {
+    $.ajax({
+      url: '/load_third_section',
+      data: {},
+      type: "GET",
+      dataType : "html",
+      success: function (html) {
+        $("#section2").html("").append(html);
+      }
+    })
+    .fail(function(xhr, status, errorThrown) {
+      alert("Sorry, there was a problem!");
+    })
+    .done(function(xhr, status) {
+    })
   }
 
     // sinatra cookie stuff?????
