@@ -1,8 +1,9 @@
 $(function () {
   var enablePageScroll = false;
+  var alphabetType;
 
   $('#fullpage').fullpage({
-    anchors: ['firstPage', 'secondPage', 'thirdPage'],
+    anchors: ['homeSection', 'chooseSection', 'generateSection'],
     onLeave: function(index, nextIndex, direction){
       if(nextIndex == 2 && (enablePageScroll == false)){
         return false;
@@ -20,7 +21,7 @@ $(function () {
 
     loadTemplate(section_type);
     enablePageScroll = true;
-    $('#section1').removeClass('hide');
+    $('#choose_section').removeClass('hide');
     $.fn.fullpage.moveTo(2);
   })
 
@@ -33,7 +34,7 @@ $(function () {
       type: "GET",
       dataType : "html",
       success: function (html) {
-        $("#section1").html("").append(html);
+        $("#choose_section").html("").append(html);
       }
     })
     .fail(function(xhr, status, errorThrown) {
@@ -47,7 +48,7 @@ $(function () {
   }
 
   function getValueFromSelectOnChange() {
-    var alphabetType = $("#single option:selected").val();
+    alphabetType = $("#single option:selected").val();
     if (alphabetType) {
       loadGenerateButton();
     }
@@ -73,22 +74,23 @@ $(function () {
   function initializeMaterializeSelect() {
     $('select').material_select();
   }
-  // TODO
-  $("#generate_loading, #load_button").click(function(){
-    alert('xxx');
-    //loadThirdSection();
-    //$('#section2').removeClass('hide');
-    //$.fn.fullpage.moveTo(3);
-  })
 
-  function loadThirdSection() {
+  $('body').on('click','#move_to_generate_section',function(){
+    loadGenerateSection();
+    $('#generate_section').removeClass('hide');
+    $.fn.fullpage.moveTo(3);
+  });
+
+  function loadGenerateSection() {
     $.ajax({
-      url: '/load_third_section',
-      data: {},
+      url: '/load_generate_section',
+      data: {
+        'alphabet_type': alphabetType
+      },
       type: "GET",
       dataType : "html",
       success: function (html) {
-        $("#section2").html("").append(html);
+        $("#generate_section").html("").append(html);
       }
     })
     .fail(function(xhr, status, errorThrown) {
@@ -117,13 +119,13 @@ $(function () {
     });
 
 
-    function setCookie() {
+    /*function setCookie() {
         Cookies.set('alphabetApp', 'visited', {expires: 0.1, path: ''});
-    }
+    }*/
 
-    function getCookie() {
+    /*function getCookie() {
         return Cookies.get('alphabetApp');
-    }
+    }*/
 
     function insert_letter(random_letter) {
         var bodyTitle = $('h2#body_title');

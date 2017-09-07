@@ -2,12 +2,16 @@ source 'https://rubygems.org'
 
 # framework
 gem 'sinatra'
-
 # web server
 gem 'thin'
-
-gem 'pry'
-
 gem 'haml'
 
-gem 'rerun'
+
+group :development do
+  gem 'pry'
+  gem 'rerun'
+end
+
+group :production do
+  #
+end
