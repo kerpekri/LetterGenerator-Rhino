@@ -1,5 +1,5 @@
 get '/' do
-  haml :'home_section/index'
+  haml :'start_section/index'
 end
 
 get '/choose_letters_or_numbers' do
