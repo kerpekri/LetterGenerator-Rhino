@@ -7,18 +7,23 @@ get '/load_button' do
 end
 
 get '/load_generate_section' do
-  if @params[:type] == 'lv'
-    alphabet_list = ''
-  elsif @params[:type] == 'ru'
-    alphabet_list = ''
-  elsif @params[:type] == 'dk'
-    alphabet_list = ''
-  else
-    alphabet_list = ''
-  end
-
   if (request.xhr?)
-    haml :'generate_section/load_generate_section', :layout => false
+    alphabet_type = @params[:alphabet_type]
+    # move to Helper
+    alphabet_list = 
+      if alphabet_type == 'lv'
+        'aābcčdeēfgģhiījkķlļmnņoprsštuūvzž'
+      elsif alphabet_type == 'ru'
+        'aбвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+      elsif alphabet_type == 'dk'
+        'abcdefghijklmnopqrstuvwxyzæøå'
+      else # custom
+        'xyz'
+      end
+    alphabet_letter = alphabet_list.split('').sample
+
+    haml :'generate_section/load_generate_section', :layout => false, 
+      :locals => {:alphabet_letter => alphabet_letter}
   else 
     redirect "/"
   end

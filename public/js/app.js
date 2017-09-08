@@ -111,13 +111,23 @@ $(function () {
         $("button#side-nav-hamburger-button").removeClass("hidden");
     }*/
 
+    $('body').on('click','#generate_new_element',function(){
+      var letter_list = get_alphabet_list(alphabetType).toUpperCase();
+      insert_letter(generate_letter(letter_list));
+    })
 
-    $("#rotation_arrow").click(function () {
-        var letter_list = "abcdefghijklmnoprstuvwxyz".toUpperCase();
-        var random_letter = generate_letter(letter_list);
-        insert_letter(random_letter);
-    });
-
+    function get_alphabet_list(type) {
+      if (type == 'lv')
+        return 'aābcčdeēfgģhiījkķlļmnņoprsštuūvzž'
+      else if (type == 'ru')
+        return 'aбвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+      else if (type == 'cust')
+        return 'xdgye'
+      else if (type == 'dk')
+        return 'abcdefghijklmnopqrstuvwxyzæøå'
+      else
+        return 'abcdefghlmnoprst'
+    }
 
     /*function setCookie() {
         Cookies.set('alphabetApp', 'visited', {expires: 0.1, path: ''});
@@ -128,12 +138,11 @@ $(function () {
     }*/
 
     function insert_letter(random_letter) {
-        var bodyTitle = $('h2#body_title');
-        bodyTitle.replaceWith('<h2 id=body_title>' + random_letter + '</h2>');
+      $('h2#generate_word_section').replaceWith('<h2 id=generate_word_section>' + random_letter + '</h2>');
     }
 
     function generate_letter(letter_list) {
-        // add condition that previous letter dont generate again
-        return letter_list[Math.floor(Math.random() * letter_list.length)];
+      // add condition that previous letter dont generate again
+      return letter_list[Math.floor(Math.random() * letter_list.length)];
     }
 });
